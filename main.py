@@ -1,5 +1,4 @@
 def read_data(file_path):
-    """Зчитує дані з файлу та повертає список словників."""
     data = []
     with open(file_path, 'r', encoding='utf-8') as file:
         for line in file:
@@ -9,12 +8,10 @@ def read_data(file_path):
                 'area': float(area.strip()),
                 'population': int(population.strip())
             })
-        return data
+    return data
 
-    def sort_by_area(data):
-        """Сортує список країн за площею за спаданням (від найбільшої)."""
-        return sorted(data, key=lambda x: x['area'], reverse=True)
+def sort_by_area(data):
+    return sorted(data, key=lambda x: x['area'], reverse=True)
 
-    def sort_by_population(data):
-        """Сортує список країн за населенням за спаданням."""
-        return sorted(data, key=lambda x: x['population'], reverse=True)
+def sort_by_population(data):
+    return sorted(data, key=lambda x: x['population'], reverse=True)
