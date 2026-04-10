@@ -14,3 +14,7 @@ def read_data(file_path):
     def sort_by_area(data):
         """Сортує список країн за площею за спаданням (від найбільшої)."""
         return sorted(data, key=lambda x: x['area'], reverse=True)
+
+    def sort_by_population(data):
+        """Сортує список країн за населенням за спаданням."""
+        return sorted(data, key=lambda x: x['population'], reverse=True)
