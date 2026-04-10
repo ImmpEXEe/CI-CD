@@ -1,15 +1,12 @@
-git init# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+def read_data(file_path):
+    """Зчитує дані з файлу та повертає список словників."""
+    data = []
+    with open(file_path, 'r', encoding='utf-8') as file:
+        for line in file:
+            country, area, population = line.strip().split(',')
+            data.append({
+                'country': country.strip(),
+                'area': float(area.strip()),
+                'population': int(population.strip())
+            })
+        return data
